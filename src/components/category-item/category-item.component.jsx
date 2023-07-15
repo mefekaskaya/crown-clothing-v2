@@ -24,6 +24,6 @@ export default CategoryItem;
 
 CategoryItem.propTypes = {
     category: PropTypes.object.isRequired,
-    title: PropTypes.string.isRequired,
-    imageUrl: PropTypes.string.isRequired
+    title: PropTypes.string,
+    imageUrl: PropTypes.string
 };

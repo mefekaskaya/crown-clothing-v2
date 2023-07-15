@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    font-family: 'Loto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+* {
+    //* mathcer is a selector that matches everything. Anything can be matched will matched and it will apply box-sizing:border-box; on all of them.
+    box-sizing: border-box;
+}
