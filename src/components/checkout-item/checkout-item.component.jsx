@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { CartContext } from '../../contexts/cart.context';
+import { clearItemFromCart, addItemToCart, removeCartItem } from '../../store/cart/cart.action';
+import { selectCartItems } from 'src/store/cart/cart-selector';
 
 import {
     CheckoutItemContainer,
@@ -13,13 +14,13 @@ import {
     RemoveButton
 } from './checkout-item.style.js';
 export default function CheckoutItem({ checkoutItem }) {
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
     const { imageUrl, name, quantity, price } = checkoutItem;
 
-    const { clearItemFromCart, addItemToCart, removeCartItem } = useContext(CartContext);
-
-    const clearItem = () => clearItemFromCart(checkoutItem);
-    const increaseQuantity = () => addItemToCart(checkoutItem);
-    const decreaseQuantity = () => removeCartItem(checkoutItem);
+    const clearItem = () => dispatch(clearItemFromCart(checkoutItem, cartItems));
+    const increaseQuantity = () => dispatch(addItemToCart(checkoutItem, cartItems));
+    const decreaseQuantity = () => dispatch(removeCartItem(checkoutItem, cartItems));
 
     return (
         <CheckoutItemContainer>
@@ -32,7 +33,7 @@ export default function CheckoutItem({ checkoutItem }) {
                 <Value>{quantity}</Value>
                 <Arrow onClick={increaseQuantity}>&#10095;</Arrow>
             </Quantiy>
-            <span className="price">{price}</span>
+            <BaseSpan>{price}</BaseSpan>
             <RemoveButton onClick={clearItem}>&#10005;</RemoveButton>
         </CheckoutItemContainer>
     );
