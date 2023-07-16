@@ -8,6 +8,8 @@ import {
     createUserDocumentFromAuth
 } from '../../utils/firebase/firebase.utils';
 
+import { SignUpContainer } from './sign-up-form.style.js';
+
 import './sign-up-form.style.scss';
 
 const defaultFormFields = {
@@ -36,7 +38,7 @@ const SignUp = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (password !== confirmPassword) {
-            // eslint-disable-next-line prettier/prettier
+            // eslint-disable-next-line prettier/prettier, quotes
             alert("Your passwords don't match");
             return;
         }
@@ -54,7 +56,7 @@ const SignUp = () => {
         }
     };
     return (
-        <div className="sign-up-container">
+        <SignUpContainer>
             <h2>Don&apos;t have an account</h2>
             <span>Sign up with email and password</span>
             <form onSubmit={handleSubmit}>
@@ -92,7 +94,7 @@ const SignUp = () => {
                 />
                 <Button type="submit">Sign Up</Button>
             </form>
-        </div>
+        </SignUpContainer>
     );
 };
 

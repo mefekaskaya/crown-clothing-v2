@@ -3,8 +3,15 @@ import PropTypes from 'prop-types';
 
 import { CartContext } from '../../contexts/cart.context';
 
-import './checkout-item.style.scss';
-
+import {
+    CheckoutItemContainer,
+    ImageContainer,
+    BaseSpan,
+    Quantiy,
+    Arrow,
+    Value,
+    RemoveButton
+} from './checkout-item.style.js';
 export default function CheckoutItem({ checkoutItem }) {
     const { imageUrl, name, quantity, price } = checkoutItem;
 
@@ -15,25 +22,19 @@ export default function CheckoutItem({ checkoutItem }) {
     const decreaseQuantity = () => removeCartItem(checkoutItem);
 
     return (
-        <div className="checkout-item-container">
-            <div className="image-container">
+        <CheckoutItemContainer>
+            <ImageContainer>
                 <img src={imageUrl} alt={name} />
-            </div>
-            <span className="name">{name}</span>
-            <span className="quantity">
-                <div className="arrow" onClick={decreaseQuantity}>
-                    &#10094;
-                </div>
-                <span className="value">{quantity}</span>
-                <div className="arrow" onClick={increaseQuantity}>
-                    &#10095;
-                </div>
-            </span>
+            </ImageContainer>
+            <BaseSpan>{name}</BaseSpan>
+            <Quantiy>
+                <Arrow onClick={decreaseQuantity}>&#10094;</Arrow>
+                <Value>{quantity}</Value>
+                <Arrow onClick={increaseQuantity}>&#10095;</Arrow>
+            </Quantiy>
             <span className="price">{price}</span>
-            <div onClick={clearItem} className="remove-button">
-                &#10005;
-            </div>
-        </div>
+            <RemoveButton onClick={clearItem}>&#10005;</RemoveButton>
+        </CheckoutItemContainer>
     );
 }
 

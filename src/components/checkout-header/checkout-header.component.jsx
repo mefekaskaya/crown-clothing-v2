@@ -1,25 +1,25 @@
 import React from 'react';
 
-import './checkout-header.style.scss';
+import { CheckoutHeaderContainer, HeaderBlock } from './checkout-header.style.js';
 
 export default function CheckoutHeader() {
     return (
-        <div className="checkout-header">
-            <div className="header-block">
+        <CheckoutHeaderContainer>
+            <HeaderBlock>
                 <span>Product</span>
-            </div>
-            <div className="header-block">
-                <span>Descriptipn</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
+                <span>Description</span>
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Quantity</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Price</span>
-            </div>
-            <div className="header-block">
+            </HeaderBlock>
+            <HeaderBlock>
                 <span>Remove</span>
-            </div>
-        </div>
+            </HeaderBlock>
+        </CheckoutHeaderContainer>
     );
 }
