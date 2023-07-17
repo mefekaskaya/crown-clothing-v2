@@ -73,7 +73,6 @@ const cartReducer = (state, action) => {
         case CART_ACTIONS.SET_CART_ITEMS:
             return {
                 ...state,
-                // ...payload // if we use updateCartItemsReducer
                 cartItems: payload
             };
         case CART_ACTIONS.SET_TOTAL_PRICE:
