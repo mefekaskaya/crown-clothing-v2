@@ -1,16 +1,7 @@
 import { AnyAction } from 'redux';
 
-import { USER_ACTION_TYPES } from './user.types';
-import {
-    signInFail,
-    signUpFail,
-    signOutFail,
-    signOutSuccess,
-    signInSuccess,
-    emailSignInStart,
-    googleSignInStart,
-    signOutStart
-} from './user.action';
+import { signInFail, signUpFail, signOutFail, signOutSuccess, signInSuccess } from './user.action';
+
 import { UserData } from '../../utils/firebase/firebase.utils';
 
 export type UserState = {
@@ -19,7 +10,7 @@ export type UserState = {
     readonly error: Error | null;
 };
 
-const INITIAL_VALUES: UserState = {
+export const INITIAL_VALUES: UserState = {
     currentUser: null,
     isLoading: false,
     error: null

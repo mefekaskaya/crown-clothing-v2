@@ -18,6 +18,8 @@ export type CategoryRouteParams = {
 
 const Category = () => {
     const { category } = useParams<keyof CategoryRouteParams>() as CategoryRouteParams;
+    console.log(category);
+
     const categoriesMap = useSelector(selectCategoriesMap);
     const isLoading = useSelector(selectCategoriesIsLoading);
     const [products, setProducts] = useState(categoriesMap[category]);
