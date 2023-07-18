@@ -1,5 +1,3 @@
-Live demo: https://crown-clothe-live.herokuapp.com/
-
 To work locally:
 
 Create .env file in root folder
