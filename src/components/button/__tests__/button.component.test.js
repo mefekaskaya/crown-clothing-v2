@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import Button, { BUTTON_TYPE_CLASSES } from '../button.component';
 
 describe('button tests', () => {
@@ -12,6 +12,13 @@ describe('button tests', () => {
         render(<Button buttonType={BUTTON_TYPE_CLASSES.google} />);
         const googleButtonElement = screen.getByRole('button');
         expect(googleButtonElement).toHaveStyle('background-color: #4285f4');
+    });
+
+    test('should render google button when passed google button type and hovered', () => {
+        render(<Button buttonType={BUTTON_TYPE_CLASSES.google} />);
+        const googleButtonElement = screen.getByRole('button');
+        fireEvent.mouseOver(googleButtonElement);
+        expect(googleButtonElement).toHaveStyle('background-color: #357ae8');
     });
 
     test('should render inverted button when passed google button type', () => {

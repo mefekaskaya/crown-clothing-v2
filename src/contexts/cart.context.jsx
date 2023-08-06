@@ -65,7 +65,6 @@ const cartReducer = (state, action) => {
     const { type, payload } = action;
     switch (type) {
         case CART_ACTIONS.TOGGLE_IS_CART_OPEN:
-            console.log(state);
             return {
                 ...state,
                 isCartOpen: !state.isCartOpen

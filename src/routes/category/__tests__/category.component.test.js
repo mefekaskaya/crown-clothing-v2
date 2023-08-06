@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react';
 
-import Category from './category.component';
-import { renderWithProviders } from '../../utils/test/test.utils';
+import Category from '../category.component';
+import { renderWithProviders } from '../../../utils/test/test.utils';
 
 jest.mock('react-router-dom', () => ({
     ...jest.requireActual('react-router-dom'),

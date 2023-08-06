@@ -33,7 +33,6 @@ const SignUp = () => {
     const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         if (password !== confirmPassword) {
-            // eslint-disable-next-line prettier/prettier
             alert("Your passwords don't match");
             return;
         }

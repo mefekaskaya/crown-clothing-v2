@@ -6,7 +6,7 @@ import { getCategoriesAndDocuments } from '../../../utils/firebase/firebase.util
 
 import { fetchCategoriesFail, fetchCategoriesSuccess } from '../category.action';
 import { fetchCategoriesAsync, onFetchCategories } from '../category.saga';
-import { CATEGORIES_ACTION_TYPES } from '../categoy.types';
+import { CATEGORIES_ACTION_TYPES } from '../category.types';
 
 describe('category saga', () => {
     test('onFetchCategories', () => {
