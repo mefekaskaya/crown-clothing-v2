@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import { SpinnerContainer } from '../spinner/spinner.style';
+import { ButtonProps } from './button.component';
 
-export const BaseButton = styled.button`
+export const BaseButton = styled.button<ButtonProps>`
     min-width: 165px;
     width: auto;
     height: 50px;
